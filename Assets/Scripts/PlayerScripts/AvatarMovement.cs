@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class AvatarMovement : MonoBehaviour
+public class AvatarMovement : MonoBehaviourPunCallbacks
 {
     public float speed = 2.5f;
     public float jumpForce = 300.0f;
@@ -16,8 +15,10 @@ public class AvatarMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerMovement();
-        playerJump();
+        if (photonView.IsMine) {
+            playerMovement();
+            playerJump();
+        }
     }
 
     private void playerMovement() {
