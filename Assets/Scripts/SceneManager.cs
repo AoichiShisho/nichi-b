@@ -23,6 +23,6 @@ public class SceneManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom() {
         // ランダムな座標に自身のアバター（ネットワークオブジェクト）を生成する
         var position = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
-        PhotonNetwork.Instantiate("Avatar", position, Quaternion.identity);
+        PhotonNetwork.Instantiate("AvatarTest", position, Quaternion.identity);
     }
 }
